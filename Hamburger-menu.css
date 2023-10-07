@@ -1,0 +1,325 @@
+/* -------------inizio reset css----------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/* ------------- fine reset css----------------*/
+img {
+    vertical-align: middle;
+}
+
+a{
+	text-decoration:none;
+}
+
+ul li{ 
+	list-style:none;
+}
+
+/* -----------------Menu nella versione mobile-----------------*/
+
+.active{
+	color:black;
+	background-color: #addfad;
+}
+	
+.active-dropdown{
+	color:black ;
+	background-color:#addfad;
+}
+
+nav{
+	height:100%;
+	background-color:#f2f2f2;
+	position:fixed;
+	width:100%;
+	margin-top:40px;
+	visibility:hidden;
+	overflow:auto;
+	   
+}
+
+nav ul{
+	padding-bottom:40px;
+}
+
+nav ul li a {
+	padding: 16px 0 16px 32px;
+	display:block;
+	color:black;
+	font-size:16px;
+	transition: background-color 0.3s ease;
+}
+
+.submenu{
+	color:black ;
+	padding-left: 55px;
+	padding-bottom: 5px;
+}
+
+nav ul li ul {
+	padding-left:0; 
+	padding-bottom:0;
+	border-radius: 10px;
+}
+
+nav ul li ul li a {
+	font-size:16px;
+	padding:10px 0 10px 55px;
+	border:hidden; 
+}
+
+.lingua{
+	border-top: 1px solid #000000; 
+}
+
+/* ----------------- div bar per l'attivazione del menu generale ------------------ */
+
+#bar{
+	background-color:white; 
+	height:54px;
+	width:100%;
+	z-index:2;
+	position:fixed;
+	box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.4);
+}
+
+#bar #logo{
+	float:right;
+	margin-right:19%;
+	border-radius: 10px;
+}
+
+/* ----------------- Hamburger animation ------------------ */
+
+#hamburger {
+  display: none;
+}
+
+.menuicon {
+ 	position:fixed;
+	height:40px;
+	width:40px;
+	margin-left:5px;
+	z-index:3;
+}
+
+.menuicon  span {
+    display: block;
+    top: 25px;
+    width: 40px;
+    height:3px;
+    left:3px;
+    background-color: black;
+    position: relative;
+	border-radius:20px;
+    transition-duration:0ms;  
+    transition-delay: .1s;
+}
+    
+.menuicon  span::after, .menuicon  span::before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 40px;
+    height:3px;
+    background-color:black;
+	border-radius:20px;
+    transition-duration: .3s;
+	-webkit-transition-delay: .1s, 0;
+    transition-delay: 0.1s, 0ms;
+}
+.menuicon  span::before {
+      margin-top: -10px;
+}
+.menuicon  span::after {
+      margin-top: 10px;
+}
+
+#hamburger:checked ~ .menuicon span{
+    background-color: rgba(0, 0, 0, 0);
+}
+    
+#hamburger:checked ~ .menuicon span::before {
+      margin-top: 0px;
+      -webkit-transition-delay: 0, .3s;
+      -moz-transition-delay: 0, .3s;
+      -ms-transition-delay: 0,.3s;
+      -o-transition-delay: 0, .3s;
+      transition-delay: 0ms, .3s;
+}
+	
+#hamburger:checked ~ .menuicon span::after {
+      margin-top: 0px;
+      -webkit-transition-delay: 0, .3s;
+      -moz-transition-delay: 0, .3s;
+      -ms-transition-delay: 0,.3s;
+      -o-transition-delay: 0, .3s;
+      transition-delay: 0ms, .3s;
+}
+
+#hamburger:checked ~ .menuicon span::before {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+}
+
+#hamburger:checked ~ .menuicon span::after {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+}
+
+/* ----------------- menu animation faccio apparire il menu ------------------ */
+
+#hamburger:checked ~ .menu-visibility {
+	visibility:visible;
+}
+
+/* -----------------media per menu orizzontale ------------------ */
+
+@media screen and (min-width: 980px){
+	
+.menuicon{
+	display:none; /* togliere icona hambuger icon */
+}
+	
+#bar #logo{
+	float:left;
+	margin-left:12px;
+}
+
+nav{
+	z-index:3;
+	margin-top:19px;
+	height:auto;
+	background-color:transparent;
+	transition:none;
+	width:auto;
+	float:right;
+	right:12px;
+	visibility:visible;
+	font-family:'Roboto Slab', serif;
+	overflow:inherit;
+}
+
+.active{
+	background-color:white;
+	color:black ;
+}
+	
+.active-dropdown{
+	color:black;
+	background-color: #f2f2f2;
+}
+
+nav ul{
+	padding:0;
+}
+	
+nav ul li a {
+	padding:0;
+	display:inline;
+	font-size:16px;
+	color: black;
+}
+
+nav ul li a:hover {
+	background-color:transparent;
+	color:#007d34;
+}
+	
+.submenu{
+	padding-left: 0;
+	color:black;
+}
+
+nav ul li {	
+	margin:0;
+	float:left;
+	position:relative;
+	padding:0 16px;
+	
+}
+
+.submenu::after{
+	float: right;
+	padding-left: 6px;
+
+}
+	
+/* ----------------- dropdown - attivare il menu a tendina ------------------ */
+	
+nav ul li ul { 
+	position:fixed;
+	height:0;
+	overflow:hidden;
+	background-color: #f2f2f2 
+}
+	
+nav ul li:hover ul{
+	height:auto;
+	padding-top: 14px;
+	position: absolute;
+    right: 0;	
+}
+
+nav ul li ul li {
+	font-size: 14px;
+	font-weight: normal;
+	float:none;
+	padding:0;
+	min-width: 160px;
+	border-top: 1px solid #f2f2f2;
+}
+
+nav ul li ul li a {
+	padding: 16px 32px;
+	display: block;
+	background-color:#f2f2f2;
+	color: black;
+	font-weight: bold;
+}
+
+nav ul li ul li a:hover {
+	background-color: #e6e6e6;
+	color:#007d34 ;
+}
+
+.lingua{
+	border-top: 0;
+	border-left: solid 1px #fff;
+	float: left;
+}
+.contatti-button {
+	background-color: #007d34;
+	display: block;
+	border-radius: 10px 10px 10px 10px;
+	color: white;
+}
+
+.contatti-button:hover{
+background: transparent;
+
+}
+
+
+}
